@@ -41,7 +41,7 @@ def get_permissions(request):
     # Initialize permissions dictionary with all modules set to 0 (no access)
     permissions = {
         'customer': 0,
-        'supliers': 0,  # Note: likely typo, should be 'suppliers'
+        'suppliers': 0,  # Note: likely typo, should be 'suppliers'
         'materials': 0,
         'purchases': 0,
         'sales': 0,

@@ -103,10 +103,8 @@ def material_delete(request, pk):
         material.delete()
         return redirect('materials:materials')
     return redirect('materials:materials')
-    
 
-
-    
+   
     
 
 @login_required
