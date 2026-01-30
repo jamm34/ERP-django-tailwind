@@ -9,4 +9,7 @@ urlpatterns = [
     path('create/', views.suppliers_create, name='suppliers_create'),
     path('<int:pk>/edit/', views.supplier_edit, name='supplier_edit'),
     path('<int:pk>/delete/', views.supplier_delete, name='supplier_delete'),
+    path('bulk_create/', views.supplier_bulk_create, name='supplier_bulk_create'),
+    path('bulk/template/', views.download_template_suppliers, name='download_template_suppliers'),
+    
 ]

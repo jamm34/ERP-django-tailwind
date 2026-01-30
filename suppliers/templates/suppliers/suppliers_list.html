@@ -40,7 +40,9 @@
       <div class="flex items-center space-x-2 mt-4 md:mt-0">
         <a href="?export=csv{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{%endfor%}" class="bg-green-600 text-white px-6 py-2 font-semibold rounded-lg hover:bg-green-700 transition-colors duration-300">Export CSV</a>
       </div>
-      
+      <div class="flex justify-end mb-2">
+          <a href="{% url 'suppliers:supplier_bulk_create' %}" class="bg-indigo-600 text-white font-semibold py-2 px-4 rounded-md shadow-md hover:bg-indigo-700 transition duration-300"> Bulk Upload (CSV)</a>
+      </div>
     {% if permissions.suppliers >= 2 %}
     <a href="{% url 'suppliers:suppliers_create' %}" class="bg-[#233b6e] text-white font-semibold py-2 px-6 rounded-lg text-center transition-colors duration-300 hover:bg-[#1a2c53]">Create new supplier</a>
     {% endif %}

@@ -25,3 +25,9 @@ class SupplierForm(forms.ModelForm):
                   'bank_account',
                   "status",
                   ]
+        
+class CsvUploadForm(forms.Form):
+    csv_file = forms.FileField(
+        label='Suppliers CSV File',
+        help_text='The file content headers that matcj=h the model fields.'
+    )
