@@ -3,6 +3,11 @@ from django.contrib.auth.decorators import login_required
 from users.models import UserRole
 
 
+def custom_404_view(request, exception=None):
+    # Nota: Django pasa `exception` a handler404; lo mantenemos opcional.
+    return render(request, '404.html', status=404)
+
+
 def root_redirect(request):
     if request.user.is_authenticated:
         return redirect('dashboard')

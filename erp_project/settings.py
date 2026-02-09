@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -11,9 +12,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-j_&*1-nmdpjdwuo@p%_khh@hqf+o*@n0)m7t3#syp2@jwpre4f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# Permite controlar DEBUG por variable de entorno.
+# Ej: set DJANGO_DEBUG=False
+DEBUG = os.environ.get('DJANGO_DEBUG', 'True').lower() in ('1', 'true', 'yes', 'y', 'on')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -46,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'core.middleware.Custom404Middleware',
 ]
 
 ROOT_URLCONF = 'erp_project.urls'

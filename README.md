@@ -99,6 +99,31 @@ erp/
 
 Actualmente no hay pruebas automatizadas. Se recomienda agregar tests unitarios y de integracion en cada app.
 
+## Página 404 (ruta no encontrada)
+
+El proyecto incluye una página **404 personalizada** para cuando alguien entra a una URL que no existe.
+
+- Plantilla: `core/templates/404.html`
+- Handler (modo producción / `DEBUG=False`): `handler404` en `erp_project/urls.py`
+- Middleware (para que también se vea con `runserver` normal / `DEBUG=True`): `core.middleware.Custom404Middleware`
+
+### Cómo probar
+
+1) Levanta el servidor normalmente:
+
+```bash
+env\Scripts\python manage.py runserver
+```
+
+2) Entra a una ruta que no exista, por ejemplo:
+
+`http://127.0.0.1:8000/esta-ruta-no-existe`
+
+Deberías ver el mensaje: **"Esta página no existe"**.
+
+> Nota: En Django, por defecto, con `DEBUG=True` se muestra un 404 técnico.
+> Este proyecto agrega un middleware para mostrar el 404 amigable también en desarrollo.
+
 ## Roadmap
 
 - Incorporar modulos faltantes del ERP (ventas, compras, inventario, contabilidad).
