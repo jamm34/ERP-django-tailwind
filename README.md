@@ -1,45 +1,60 @@
 # ERP System (Django + Tailwind)
 
-Sistema ERP desarrollado con **Django** y **Tailwind CSS** orientado a la gestión operativa de módulos clave como materiales y proveedores, con control de acceso por roles y permisos.
+Sistema ERP desarrollado con Django y Tailwind CSS para la gestion operativa de materiales y proveedores, con control de acceso por roles y permisos.
 
-## 🧭 Visión general
+**Estado:** proyecto en desarrollo para entorno local.
 
-Este proyecto centraliza procesos internos de una organización, proporcionando:
+**Autor:** jamm34
 
-- Autenticación de usuarios con sesiones protegidas.
-- Dashboard con accesos por permisos (lectura/escritura).
-- Módulos operativos para **Materiales** y **Proveedores**.
-- Exportación e importación masiva vía **CSV**.
-- Interfaz moderna con **Tailwind CSS**.
+**Tabla de contenidos**
+1. Vision general
+2. Modulos
+3. Tecnologias
+4. Instalacion rapida
+5. Estructura del proyecto
+6. Requisitos
+7. Pruebas
+8. Roadmap
+9. Licencia
 
-## 🧩 Módulos disponibles
+## Vision general
 
-### ✅ Materiales
+Este proyecto centraliza procesos internos de una organizacion y ofrece:
+
+- Autenticacion de usuarios con sesiones protegidas.
+- Dashboard con accesos por permisos (lectura / lectura-escritura).
+- Modulos operativos para Materiales y Proveedores.
+- Exportacion e importacion masiva via CSV.
+- Interfaz moderna con Tailwind CSS.
+
+## Modulos
+
+### Materiales
 - CRUD de materiales.
 - Filtros por ID, nombre, tipo y estado.
-- Exportación de listados a CSV.
+- Exportacion de listados a CSV.
 - Control de permisos (solo lectura / lectura-escritura).
 
-### ✅ Proveedores
+### Proveedores
 - CRUD de proveedores.
-- Filtros por ID, nombre, país y estado.
-- Exportación de listados a CSV.
-- Carga masiva por CSV con validación y reporte de errores.
+- Filtros por ID, nombre, pais y estado.
+- Exportacion de listados a CSV.
+- Carga masiva por CSV con validacion y reporte de errores.
 - Descarga de plantilla CSV.
 
-### 🔐 Usuarios y Permisos
+### Usuarios y permisos
 - Login/Logout.
-- Roles con permisos por módulo (lectura / lectura-escritura).
-- Dashboard que muestra accesos según permisos del usuario.
+- Roles con permisos por modulo (lectura / lectura-escritura).
+- Dashboard que muestra accesos segun permisos del usuario.
 
-## 🛠️ Tecnologías
+## Tecnologias
 
-- **Python 3.11+**
-- **Django 5.2**
-- **Tailwind CSS** (CDN)
-- **SQLite** (entorno local)
+- Python 3.11+
+- Django 5.2
+- Tailwind CSS (CDN)
+- SQLite (entorno local)
 
-## ⚙️ Instalación rápida
+## Instalacion rapida
 
 ```bash
 # 1) Crear entorno virtual
@@ -63,38 +78,34 @@ python manage.py runserver
 
 Acceso local: `http://127.0.0.1:8000/`
 
-## 📂 Estructura del proyecto
+## Estructura del proyecto
 
 ```
 erp/
 ├── core/              # Dashboard y layout base
-├── users/             # Autenticación y roles
-├── materials/         # Módulo de materiales
-├── suppliers/         # Módulo de proveedores
-├── erp_project/       # Configuración del proyecto Django
+├── users/             # Autenticacion y roles
+├── materials/         # Modulo de materiales
+├── suppliers/         # Modulo de proveedores
+├── erp_project/       # Configuracion del proyecto Django
 └── manage.py
 ```
 
-## ✅ Requisitos
+## Requisitos
 
 - Python 3.11 o superior
 - pip
 
-## 🧪 Pruebas
+## Pruebas
 
-Actualmente no hay pruebas automatizadas. Se recomienda agregar tests unitarios y de integración en cada app.
+Actualmente no hay pruebas automatizadas. Se recomienda agregar tests unitarios y de integracion en cada app.
 
-## 🚀 Próximos pasos sugeridos
+## Roadmap
 
-- Incorporar módulos faltantes del ERP (ventas, compras, inventario, contabilidad).
-- Añadir API REST para integraciones externas.
-- Mejorar la gestión de permisos por rol (UI administrativa).
+- Incorporar modulos faltantes del ERP (ventas, compras, inventario, contabilidad).
+- Anadir API REST para integraciones externas.
+- Mejorar la gestion de permisos por rol (UI administrativa).
 - Agregar CI/CD y pruebas automatizadas.
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto no tiene una licencia definida. Si deseas publicarlo o distribuirlo, agrega una licencia en este archivo.
-
----
-
-**Autor:** jamm34
