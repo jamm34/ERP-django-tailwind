@@ -39,9 +39,13 @@ def get_permissions(request):
         - reporting: Report generation permissions
     """
     # Initialize permissions dictionary with all modules set to 0 (no access)
+    # NOTE:
+    # The `Role` model uses plural field names (e.g. `customers`, `suppliers`, ...).
+    # Templates also reference these plural keys (e.g. `permissions.customers`).
+    # Keep this dict aligned with `users.models.Role` field names.
     permissions = {
-        'customer': 0,
-        'suppliers': 0,  # Note: likely typo, should be 'suppliers'
+        'customers': 0,
+        'suppliers': 0,
         'materials': 0,
         'purchases': 0,
         'sales': 0,

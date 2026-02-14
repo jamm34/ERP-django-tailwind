@@ -44,7 +44,13 @@
       <div class="flex items-center space-x-4">
         <label for="{{ form.unit.id_for_label }}" class="block text-sm font-medium text-gray-700 w-1/3">Unit</label>
         <div class="mt-1 w-2/3">
-           {{form.unit}}
+           {% with unit_value=form.unit.value|stringformat:'s' %}
+           <select name="{{ form.unit.html_name }}" id="{{ form.unit.id_for_label }}" class="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-[#233b6e]">
+           {% for option in form.unit.field.queryset %}
+            <option value="{{ option.pk }}" {% if unit_value == option.pk|stringformat:'s' %}selected{% endif %}>{{ option }}</option>
+            {% endfor %}
+           </select>
+           {% endwith %}
            {% if form.unit.errors %}
            <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-2 mt-1 rounded text-sm">
               {{form.unit.errors}}
@@ -55,7 +61,13 @@
       <div class="flex items-center space-x-4">
         <label for="{{ form.material_type.id_for_label }}" class="block text-sm font-medium text-gray-700 w-1/3">Material Type</label>
         <div class="mt-1 w-2/3">
-          {{form.material_type}}
+          {% with material_type_value=form.material_type.value|stringformat:'s' %}
+          <select name="{{ form.material_type.html_name }}" id="{{ form.material_type.id_for_label }}" class="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-[#233b6e]">
+            {% for option in form.material_type.field.queryset %}
+            <option value="{{ option.pk }}" {% if material_type_value == option.pk|stringformat:'s' %}selected{% endif %}>{{ option }}</option>
+            {% endfor %}
+          </select>
+          {% endwith %}
            {% if form.material_type.errors %}
            <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-2 mt-1 rounded text-sm">
               {{form.material_type.errors}}
@@ -66,7 +78,14 @@
       <div class="flex items-center space-x-4">
         <label for="{{ form.status.id_for_label }}" class="block text-sm font-medium text-gray-700 w-1/3">Status</label>
         <div class="mt-1 w-2/3">
-            {{form.status}}
+           {% with status_value=form.status.value|stringformat:'s' %}
+           <select name="{{ form.status.html_name }}" id="{{ form.status.id_for_label }}" class="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-[#233b6e]">
+            
+            {% for option in form.status.field.queryset %}
+            <option value="{{ option.pk }}" {% if status_value == option.pk|stringformat:'s' %}selected{% endif %}>{{ option }}</option>
+            {% endfor %}
+           </select>
+           {% endwith %}
            {% if form.status.errors %}
            <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-2 mt-1 rounded text-sm">
               {{form.status.errors}}
